@@ -1,0 +1,52 @@
+/* 热度组件样式 */
+.hotness-indicator {
+    position: absolute;
+    top: -2px; /* 稍微超出卡片边框 */
+    right: -4px; /* 稍微超出卡片边框 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 热度文本样式 */
+.hotness-text {
+    margin-right: 4px; /* 添加一些间距 */
+}
+
+/* 热度箭头样式 */
+.hotness-arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent; /* 左边透明 */
+    border-right: 5px solid transparent; /* 右边透明 */
+    border-bottom: 10px solid white; /* 底边白色 */
+    margin-left: 2px; /* 调整箭头位置 */
+}
+
+/* 脉冲动画 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 应用脉冲动画 */
+.hotness-indicator {
+    animation: pulse 2s infinite;
+}

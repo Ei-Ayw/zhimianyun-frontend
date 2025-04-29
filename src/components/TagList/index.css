@@ -1,0 +1,48 @@
+/* 标签列表容器 */
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* 增大标签之间的间距，提升视觉舒适度 */
+    padding: 12px; /* 增大内边距，让标签列表与周围元素有更舒适的间隔 */
+    border-radius: 10px; /* 增大圆角，使整体风格更圆润 */
+    max-width: 100%; /* 确保在大屏幕上不会超出容器宽度 */
+    margin: 0 auto; /* 居中对齐，使标签列表在页面中更显眼 */
+}
+
+/* 单个标签样式 */
+.tag-list .ant-tag {
+    padding: 6px 12px; /* 增大标签内边距，让文字更舒适地显示 */
+    font-size: 16px; /* 增大字体大小，提升可读性 */
+    font-weight: 600; /* 字体半粗 */
+    color: #ffffff; /* 字体颜色保持深灰色，确保清晰 */
+    background: linear-gradient(135deg, rgb(34, 197, 94), rgb(100, 200, 100));
+    border-radius: 16px; /* 增大圆角，与整体风格保持一致 */
+    cursor: pointer; /* 鼠标悬停时的光标样式，提示用户可交互 */
+    transition: all 0.3s ease; /* 平滑的动画效果，提升用户体验 */
+    position: relative; /* 为添加伪元素等操作提供定位上下文 */
+    overflow: hidden; /* 防止内容溢出 */
+    white-space: nowrap; /* 防止文字换行，确保标签内容在一行显示 */
+    text-overflow: ellipsis; /* 当内容超出时显示省略号，避免布局破坏 */
+}
+
+/* 鼠标悬停时的标签样式 */
+.tag-list .ant-tag:hover {
+    background: linear-gradient(135deg, #55efc4, #81ecec); /* 鼠标悬停时的绿色渐变背景 */
+    color: #fff; /* 鼠标悬停时的字体颜色变为白色，与背景形成高对比度 */
+    transform: scale(1.05); /* 鼠标悬停时轻微放大，增强交互效果 */
+    z-index: 1; /* 确保放大后的标签不会被其他元素遮挡 */
+}
+
+/* 小屏幕下的样式调整 */
+@media (max-width: 768px) {
+    .tag-list {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px; /* 在小屏幕上适当减小内边距，节省空间 */
+    }
+
+    .tag-list .ant-tag {
+        margin-bottom: 10px; /* 在小屏幕上增加标签之间的垂直间距，提升可读性 */
+        font-size: 14px; /* 在小屏幕上适当减小字体大小，适应屏幕尺寸 */
+    }
+}
